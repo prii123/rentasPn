@@ -6,32 +6,32 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(name = "api/v1")
+@RequestMapping("/api/v1")
 public class ClienteController
 {
     @Autowired
     private ICliente clienteService;
 
-    @PostMapping(name = "cliente")
+    @PostMapping("cliente")
     public Cliente create(@RequestBody Cliente cliente)
     {
         return clienteService.save(cliente);
     }
 
-    @PutMapping(name = "cliente")
+    @PutMapping("cliente")
     public Cliente update(@RequestBody Cliente cliente)
     {
         return clienteService.save(cliente);
     }
 
-    @DeleteMapping(name = "cliente/{id}")
+    @DeleteMapping("cliente/{id}")
     public void delete(@PathVariable Long id)
     {
         Cliente cliente = clienteService.findById(id);
         clienteService.delete(cliente);
     }
 
-    @GetMapping(name = "cliente/{id}")
+    @GetMapping("cliente/{id}")
     public Cliente showById(@PathVariable Long id)
     {
         return clienteService.findById(id);
