@@ -14,16 +14,16 @@ public class GoogleAuthImpl implements IGoogleAuth {
     private GoogleAuthDAO googleAuthDAO  ;
     @Override
     public GoogleAuth save(GoogleAuth googleAuth) {
-        return null;
+        return  googleAuthDAO.save(googleAuth);
     }
 
     @Override
     public GoogleAuth findById(Long id) {
-        return null;
+        return googleAuthDAO.findById(id).orElse(null);
     }
 
     @Override
     public void delete(GoogleAuth googleAuth) {
-
+        googleAuthDAO.delete(googleAuth);
     }
 }

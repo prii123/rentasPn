@@ -1,4 +1,7 @@
 package com.rentas.rentas.archivos.model.dao;
 
-public interface ArchivosDAO {
+import com.rentas.rentas.archivos.model.entity.Archivo;
+import org.springframework.data.repository.CrudRepository;
+
+public interface ArchivosDAO extends CrudRepository<Archivo, Long> {
 }

@@ -14,16 +14,16 @@ public class ArchivoImpl implements IArchivo {
     private ArchivosDAO archivosDAO;
     @Override
     public Archivo save(Archivo archivo) {
-        return null;
+        return archivosDAO.save(archivo);
     }
 
     @Override
     public Archivo findById(Long id) {
-        return null;
+        return archivosDAO.findById(id).orElse(null);
     }
 
     @Override
     public void delete(Archivo archivo) {
-
+        archivosDAO.delete(archivo);
     }
 }
